@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-servicedelete',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servicedelete.component.css']
 })
 export class ServicedeleteComponent implements OnInit {
-
-  constructor() { }
+  response: any;
+  constructor(private httpRef:HttpClient) { }
 
   ngOnInit(): void {
+  }
+
+  delete(serviceId){
+      const options={responseType:'text' as 'text'};
+      let obs=this.httpRef.delete("http://localhost:5003//service/delete/"+serviceId.viewModel,options);
+      obs.subscribe((response)=>{
+        this.response=response;
+        console.log(response);
+      })
   }
 
 }

@@ -7,6 +7,7 @@
                 <div *ngIf="serviceId.errors.required">Id required</div>
                 <div *ngIf="serviceId.errors.pattern">Enter the id as a number</div>
             </div>
-        <div class="btn btn-dark" style="margin-left: 50px;">Submit</div>
+        <div class="btn btn-dark" style="margin-left: 50px;" (click)="delete(serviceId)">Submit</div>
     </form>
+    <h3 style="text-align: center;">{{response}}</h3>
 </div>
