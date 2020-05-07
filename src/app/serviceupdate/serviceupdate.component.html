@@ -37,9 +37,8 @@
                     <div *ngIf="cost.errors.pattern">Cost in numbers</div>
                 </div>
           </div>
-         <div *ngIf="serviceName.valid && description.valid && cost.valid"> 
+        
           <div class="btn btn-dark" (click)="submitData(serviceId,serviceName,description,cost)" style="margin-left: 45%;">Submit</div>
-         </div> 
-         <h3 style="text-align: center;">{{response}}</h3>
+          <h3 style="text-align: center;">{{response}}</h3>
       </form>
 </div>

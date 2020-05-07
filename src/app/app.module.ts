@@ -10,7 +10,8 @@ import {FormsModule} from '@angular/forms';
 import { ServiceupdateComponent } from './serviceupdate/serviceupdate.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ServicedeleteComponent } from './servicedelete/servicedelete.component';
-import { ServiceshowComponent } from './serviceshow/serviceshow.component'
+import { ServiceshowComponent } from './serviceshow/serviceshow.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { ServiceshowComponent } from './serviceshow/serviceshow.component'
     ServiceaddComponent,
     ServiceupdateComponent,
     ServicedeleteComponent,
-    ServiceshowComponent
+    ServiceshowComponent,
+   
   ],
   imports: [
     BrowserModule,

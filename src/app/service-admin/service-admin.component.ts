@@ -11,7 +11,9 @@ export class ServiceAdminComponent implements OnInit {
   delete: boolean=false;
   show: boolean=false;
   responseBody:any;
-  
+  userName:string="admin";
+  password:string="admin123";
+  res:boolean=false;
 
   constructor() { }
 
@@ -42,5 +44,15 @@ export class ServiceAdminComponent implements OnInit {
     this.delete=false;
     this.update=false;
   }
+
+  submit(val1,val2){
+    console.log(val2.viewModel);
+    console.log(val1.viewModel);
+    if(this.userName==val1.viewModel && this.password==val2.viewModel){
+        
+        this.res=true;
+        
+    }
+}
  
 }
