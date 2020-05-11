@@ -1,0 +1,42 @@
+
+<!--The Search Bar-->
+<form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-4" style="width: 500px;" type="text" placeholder="Search for a Service..." aria-label="Search" name="serviceName" [(ngModel)]="serviceName">
+    <button (click)="searchNames()"  class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+</form>
+<!---->
+
+<div *ngIf="responseBody">
+        <div class="container-fluid text-center" >
+            <div class="row m-4 text-center rounded">
+              <div *ngFor="let item of responseBody;let i = index">
+              <div class="row " style="padding:50px;margin-left: 50px; filter:drop-shadow(8px 8px 10px gray);">
+                <div class="col-md-8 col-bg align-middle">
+                  <div style="margin: 50px 0px;" class="text-white">
+                  <h1>{{item.name}}</h1>
+                  </div>
+          
+                </div>
+                <!-- {{getCustomerId()}} -->
+                <div class="col-md-4 bg-light" style="padding:10px; width: 250px;">
+                  <h4> {{item.name}}</h4>
+                  <p>{{item.description}} </p>
+                  <p>Rupees:{{item.cost}}\-</p>
+                  <button class="btn btn-primary">Hire</button>
+                  <!-- <button onclick="window.location.href='https://w3docs.com';" >Click Here</button> -->
+                  <!-- <div *ngIf="!getCustomerId()">
+                    <button class="btn btn-primary"  onclick="window.location.href='#signin';" mat-stroked-button (click)="showAlertNotification()" >Hire</button  >
+                  </div> -->
+                  <!-- <div *ngIf="getCustomerId()">
+                     onclick="window.location.href ='/pay/getCustomerId()/service.sericeId/service.cost';"
+                    <button class="btn btn-primary"  (click)="processValues(service.serviceId, service.cost, getCustomerId())">Hire</button>
+                  </div> -->
+                </div>
+             </div>  
+             <hr>
+          </div>
+          
+          </div>
+          </div>
+
+</div>
