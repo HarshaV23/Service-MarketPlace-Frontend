@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,10 +13,16 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  searchNames(){ 
-    this.httpRef.get("http://localhost:5003//service/serviceByName/"+this.serviceName).subscribe((responseBody)=>{
+  searchNames(serviceName){ 
+    if(serviceName.viewModel==""){
+
+    }
+    else{
+    this.httpRef.get("http://localhost:5003//service/serviceByName/"+serviceName.viewModel).subscribe((responseBody)=>{
       this.responseBody=responseBody;
       console.log(responseBody);
+      
     });
+    }
   }
 }

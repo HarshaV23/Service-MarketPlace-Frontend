@@ -1,12 +1,15 @@
 
 <!--The Search Bar-->
 <form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-4" style="width: 500px;" type="text" placeholder="Search for a Service..." aria-label="Search" name="serviceName" [(ngModel)]="serviceName">
-    <button (click)="searchNames()"  class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    <input class="form-control" style="width: 500px;" type="text" placeholder="Search for a Service..." aria-label="Search" (input)="searchNames(serviceName)"  id="serviceName" name="serviceName" ngModel #serviceName="ngModel">
+    <div (click)="searchNames(serviceName)"  class="btn btn-dark my-2 my-sm-0" type="submit">
+      <a href="#"><i class="fa fa-search"></i></a>
+
+    </div>
 </form>
 <!---->
 
-<div *ngIf="responseBody">
+<div *ngIf="responseBody && serviceName.viewModel!=''">
         <div class="container-fluid text-center" >
             <div class="row m-4 text-center rounded">
               <div *ngFor="let item of responseBody;let i = index">
